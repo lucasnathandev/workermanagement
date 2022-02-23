@@ -1,0 +1,27 @@
+[{
+    "nome" : "Raul", "posto" : "porta", "dias" : ["quarta", "domingo"]
+},
+{
+    "nome" : "Elizabete", "posto" : "direita", "dias" : ["quarta", "domingo"]
+},
+{
+    "nome" : "Maria Helena", "posto" : "porta", "dias" : ["quarta", "sexta", "domingo"]
+},
+{
+    "nome" : "Luzia", "posto" : "porta", "dias" : ["quarta", "sexta", "domingo"]
+},
+{
+    "nome" : "Ueverton", "posto" : "porta", "dias" : ["quarta","sexta", "domingo"]
+},
+{
+    "nome" : "Dalila", "posto" : "esquerda", "dias" : ["quarta", "sexta", "domingo"]
+},
+{
+    "nome" : "Daniela", "posto" : "direita", "dias" : ["quarta", "sexta", "domingo"]
+},
+{
+    "nome" : "Bruno", "posto" : "porta", "dias" : ["domingo"]
+},
+{
+    "nome" : "Carlos", "posto" : "porta", "dias" : ["quarta", "sexta", "domingo"]
+}]

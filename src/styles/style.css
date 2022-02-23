@@ -1,0 +1,80 @@
+body {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  overflow: hidden;
+  flex-flow: row wrap;
+  --width: 80%;
+  width: var(--width);
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background-color: rgba(100, 100, 100, 0.4);
+  margin-inline-start: calc((100% - var(--width)) / 2);
+}
+
+.container * {
+  margin: 10px;
+}
+
+.escala {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.escala * {
+  font-size: 1.3rem;
+}
+
+.add {
+  background-color: rgb(108, 209, 240);
+  color: #000;
+  outline: 2px solid rgb(53, 158, 255);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.tabela-escala {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-escala * {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 450;
+}
+
+.tabela-escala thead {
+  align-content: flex-start;
+  border-bottom: 5px solid black;
+}
+
+.tabela-escala th {
+  background-color: rgb(100, 100, 100);
+  color: aliceblue;
+  padding: 0;
+  margin: 0;
+}
+
+.tabela-escala tr {
+  text-align: center;
+}
+
+.tabela-escala tbody td {
+  height: 7.5vh;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+@media (max-width: 700) {
+  .container {
+    flex-flow: column wrap;
+  }
+  .escala {
+    flex-flow: column wrap;
+  }
+}

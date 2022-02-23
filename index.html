@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escala de Obreiros Aleluia</title>
+    <link rel="stylesheet" href="./src/styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabela"></div>
+      <div class="escala">
+        <div id="nome">
+          <label for="nomeobreiro" id="nomelabel">Nome do Obreiro</label>
+          <input type="text" name="obreiro" id="nomeobreiro" />
+        </div>
+        <div id="posto">
+          <label for="postoobreiro" id="postolabel">Posto do Obreiro</label>
+          <select id="postoobreiro">
+            <option>Porta</option>
+            <option>Corredor Direito</option>
+            <option>Corredor Esquerdo</option>
+          </select>
+        </div>
+        <div id="dia" class="diasemana">
+          <label for="diaobreiro" id="dialabel">Dia da Semana</label>
+          <select id="diaobreiro">
+            <option>Quarta, Sexta e Domingo</option>
+            <option>Quarta-feira</option>
+            <option>Sexta-feira</option>
+            <option>Domingo</option>
+            <option>Quarta e Domingo</option>
+          </select>
+        </div>
+        <div class="adicionar">
+          <button class="add">Adicionar</button>
+        </div>
+      </div>
+    </div>
+    <script src="./src/js/index.js"></script>
+    <script>
+      const addButton = document.querySelector(".add");
+      addButton.addEventListener("click", function (e) {
+        if (!document.querySelector(".tabela-escala")) {
+          const table = document.createElement("table");
+          const thead = document.createElement("thead");
+          const tbody = document.createElement("tbody");
+          table.className = "tabela-escala";
+          container.appendChild(table).appendChild(thead);
+          table.appendChild(tbody);
+        }
+        const workerNameLabel = document.querySelector("#nomelabel").innerText;
+        const positionLabel = document.querySelector("#postolabel").innerText;
+        const weekdayLabel = document.querySelector("#dialabel").innerText;
+        console.log(workerNameLabel, positionLabel, weekdayLabel);
+
+        const capitalize = function (a) {
+          return a.replace(/(?:^|\s)\S/g, function (capitalize) {
+            return capitalize.toUpperCase();
+          });
+        };
+
+        const workerName = capitalize(
+          document.querySelector("#nomeobreiro").value
+        );
+        const position = capitalize(
+          document.querySelector("#postoobreiro").value
+        );
+        const weekDay = capitalize(document.querySelector("#diaobreiro").value);
+
+        function createHTMLElement(tagName, value) {
+          const newElement = document.createElement(tagName);
+          newElement.innerHTML = value;
+          return newElement;
+        }
+
+        const thead = document.querySelector(".tabela-escala > thead");
+
+        const tbody = document.querySelector(".tabela-escala > tbody");
+
+        function generateHeadData(data) {
+          const tr =
+            document.querySelector("tr.dados") || document.createElement("tr");
+          tr.className = "dados";
+          tr.appendChild(createHTMLElement("th", data));
+          return tr;
+        }
+
+        function writeHeaderData(...data) {
+          for (let i in data) {
+            thead.appendChild(generateHeadData(data[i]));
+          }
+        }
+
+        function writeCellData(...data) {
+          const tr = document.createElement("tr");
+          for (let i in data) {
+            tr.appendChild(createHTMLElement("td", data[i]));
+            tbody.appendChild(tr);
+          }
+        }
+        if (!thead.childElementCount)
+          writeHeaderData(workerNameLabel, positionLabel, weekdayLabel);
+
+        writeCellData(workerName, position, weekDay);
+      });
+    </script>
+  </body>
+</html>
