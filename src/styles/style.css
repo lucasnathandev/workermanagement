@@ -15,18 +15,29 @@ body {
   margin-inline-start: calc((100% - var(--width)) / 2);
 }
 
-.container * {
+.container > * {
   margin: 10px;
 }
 
 .escala {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .escala * {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+}
+
+.escala > * {
+  margin: 0.5rem;
+}
+
+.tabela {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .add {
@@ -35,6 +46,11 @@ body {
   outline: 2px solid rgb(53, 158, 255);
   border-radius: 5px;
   padding: 5px;
+  align-self: center;
+}
+
+.adicionar {
+  align-self: center;
 }
 
 .tabela-escala {
@@ -55,8 +71,8 @@ body {
 }
 
 .tabela-escala th {
-  background-color: rgb(100, 100, 100);
-  color: aliceblue;
+  background-color: rgb(68, 159, 245);
+  color: #000;
   padding: 0;
   margin: 0;
 }
@@ -70,11 +86,25 @@ body {
   border: 1px solid rgb(100, 100, 100);
 }
 
-@media (max-width: 700) {
+.tabela-escala tbody {
+  background-color: #fff;
+}
+
+@media (max-width: 700px) {
   .container {
+    height: 100vh;
+    margin: 0;
     flex-flow: column wrap;
+    width: 100%;
+    align-items: center;
   }
   .escala {
     flex-flow: column wrap;
+    justify-content: center;
+  }
+
+  .tabela-escala {
+    width: 95%;
+    margin: 10px;
   }
 }
