@@ -9,7 +9,6 @@ body {
   --width: 80%;
   width: var(--width);
   align-content: center;
-  justify-content: space-evenly;
   align-items: flex-start;
   background-color: rgba(100, 100, 100, 0.4);
   margin-inline-start: calc((100% - var(--width)) / 2);
